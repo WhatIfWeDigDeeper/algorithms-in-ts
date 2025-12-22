@@ -10,7 +10,8 @@
   },
   "scripts": {
     "audit.ci": "npx audit-ci --high",
-    "test": "jest --watch",
+    "test": "jest --color",
+    "test.watch": "jest --watch --color",
     "lint": "eslint src/**"
   }
 }
