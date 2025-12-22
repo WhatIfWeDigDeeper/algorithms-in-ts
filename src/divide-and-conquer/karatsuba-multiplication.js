@@ -1,5 +1,4 @@
-// @flow
-const kMultiply = (a: number, b: number, c: number, d: number): number => {
+const kMultiply = (a, b, c, d) => {
   const step1 = a * c;
   const step2 = b * d;
   const step3 = (a + b) * (c + d);
