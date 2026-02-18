@@ -1,5 +1,5 @@
 {
-  "name": "algo-js",
+  "name": "algorithms-in-ts",
   "version": "0.1.0",
   "devDependencies": {
     "@eslint/js": "10.0.1",
