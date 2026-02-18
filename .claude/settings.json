@@ -1,0 +1,86 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Fetch(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Read(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebFetch(*)",
+      "Search(*)",
+      "Skill(playwright-cli:*)"
+    ],
+    "deny": [
+      "Read(.env*)",
+      "Write(.env*)",
+      "Edit(.env*)",
+      "Bash(rm -rf /)",
+      "Bash(sudo *)",
+      "Bash(chmod 777 *)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"Claude Code\" -message \"Claude needs your permission\" -sound Glass"
+          }
+        ]
+      },
+      {
+        "matcher": "elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"Claude Code\" -message \"Claude has a question for you\" -sound Glass"
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"Claude Code\" -message \"Claude is waiting for your input\" -sound Glass"
+          }
+        ]
+      }
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "network": {
+      "allowUnixSockets": [
+        "/var/run/docker.sock"
+      ],
+      "allowLocalBinding": true
+    },
+    "excludedCommands": [
+      "docker",
+      "gh",
+      "git",
+      "psql",
+      "mysql",
+      "mongosh",
+      "npm",
+      "npx",
+      "playwright",
+      "redis-cli"
+    ]
+  }
+}
