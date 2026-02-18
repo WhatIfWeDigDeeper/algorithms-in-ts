@@ -4,20 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Classic algorithm implementations in ES6, based on "Grokking Algorithms" by Manning Press. Some algorithms use tail recursion variants. All code uses ES module syntax (import/export).
+Classic algorithm implementations in TypeScript, based on "Grokking Algorithms" by Manning Press. Some algorithms use tail recursion variants. All code uses ES module syntax (import/export) with TypeScript strict mode.
 
 ## Commands
 
 - **Run all tests:** `npm test`
 - **Run tests in watch mode:** `npm run test.watch`
-- **Run a single test file:** `npx jest src/sort/quickSort.test.js --color`
-- **Lint:** `npm run lint`
+- **Run a single test file:** `npx jest src/sort/quickSort.test.ts --color`
+- **Type check (lint):** `npm run lint`
+- **Build:** `npm run build`
 
 ## Code Conventions
 
-- ES module syntax (`import`/`export default`) transpiled via Babel
-- Tests use Jest, colocated with source files (e.g., `quickSort.js` / `quickSort.test.js`)
-- Test files use either `.test.js` or `.spec.js` suffix
-- Shared helpers (`head`, `tail`, `isEmpty`) live in `src/util/index.js`
+- TypeScript with strict mode, transpiled via ts-jest for tests
+- Tests use Jest, colocated with source files (e.g., `quickSort.ts` / `quickSort.test.ts`)
+- Test files use either `.test.ts` or `.spec.ts` suffix
+- Shared helpers (`head`, `tail`, `isEmpty`) live in `src/util/index.ts`
 - Algorithms are organized by category under `src/` (sort, search, graph, recursion, fibonacci, binary-tree, divide-and-conquer)
 - Many algorithms provide both iterative and recursive implementations

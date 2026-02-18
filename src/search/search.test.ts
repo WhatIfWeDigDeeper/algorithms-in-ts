@@ -30,7 +30,7 @@ describe('Search', () => {
     });
 
     test('should return null when not found', () => {
-      const list = [];
+      const list: number[] = [];
       const item = 6;
       expect(binarySearchRecursive(list, item, (a, b) => a - b)).toBeNull();
     });

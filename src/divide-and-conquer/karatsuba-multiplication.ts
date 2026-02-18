@@ -1,4 +1,4 @@
-const kMultiply = (a, b, c, d) => {
+const kMultiply = (a: number, b: number, c: number, d: number): number => {
   const step1 = a * c;
   const step2 = b * d;
   const step3 = (a + b) * (c + d);

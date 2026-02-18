@@ -16,7 +16,7 @@ describe('binary tree', () => {
   describe('buildTree', () => {
     test('create tree from list', () => {
       const tree = buildTree([1, 2, 3, 4]);
-      expect(tree.left().node().value).toEqual(2);
+      expect((tree as Branch<number, number>).left().node().value).toEqual(2);
       expect(traverse(tree)[3].key).toEqual(4);
       expect(traverseAcc(tree)[3].key).toEqual(4);
     });
