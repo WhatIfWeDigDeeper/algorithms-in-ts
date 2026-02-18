@@ -2,7 +2,7 @@ import findLowestCostPath from './dijkstrasWeightedGraph';
 
 describe('Dijkstras Weighted Graph', () => {
   // the graph
-  const graph = {};
+  const graph: Record<string, Record<string, number>> = {};
   graph.start = {};
   graph.start.a = 6;
   graph.start.b = 2;
@@ -17,13 +17,13 @@ describe('Dijkstras Weighted Graph', () => {
   graph.fin = {};
 
   // The costs table
-  const costs = {};
+  const costs: Record<string, number> = {};
   costs.a = 6;
   costs.b = 2;
   costs.fin = Infinity;
 
   // the parents table
-  const parents = {};
+  const parents: Record<string, string | null> = {};
   parents.a = 'start';
   parents.b = 'start';
   parents.fin = null;

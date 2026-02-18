@@ -1,12 +1,12 @@
 import { replicate } from '../util';
 
-const fibonacci = (n) => {
+const fibonacci = (n: number): number => {
   if (n === 0) return 0;
   if (n === 1) return 1;
   return fibonacci(n - 1) + fibonacci(n - 2);
 };
 
-const fibonacciM = (n, m) => {
+const fibonacciM = (n: number, m: number[]): number => {
   if (n === 0) return 0;
   if (n === 1) return 1;
   if (m[n] !== -1) {
@@ -17,9 +17,8 @@ const fibonacciM = (n, m) => {
   return memo[n];
 };
 
-export const fibonacciMemo = n => (
+export const fibonacciMemo = (n: number): number => (
   fibonacciM(n, replicate(-1, n + 1))
 );
 
 export default fibonacci;
-

@@ -1,11 +1,11 @@
 import breadthFirstSearch, { breadthFirstSearchRecursive } from './breadthFirstSearch';
 
 describe('breadthFirstSearch', () => {
-  function itemIsSeller(name) {
+  function itemIsSeller(name: string): boolean {
     return name[name.length - 1] === 'm';
   }
 
-  const graph = {};
+  const graph: Record<string, string[]> = {};
   graph.you = ['alice', 'bob', 'claire'];
   graph.bob = ['anuj', 'peggy'];
   graph.alice = ['peggy'];

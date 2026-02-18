@@ -1,16 +1,12 @@
-export const binarySearch = (list, item, compareFn) => {
+export const binarySearch = <T>(list: T[], item: T, compareFn: (a: T, b: T) => number): number | null => {
   let low = 0;
   let high = list.length - 1;
-  let mid;
-  let compareResult;
+  let mid: number;
+  let compareResult: number;
 
-  // console.log(`find ${item}`);
-  // console.log(`high start: ${high}`);
   while (low <= high) {
     mid = Math.floor(low + ((high - low) / 2));
-    // console.log(`mid: ${mid}, list[mid]: ${list[mid]}`);
     compareResult = compareFn(item, list[mid]);
-    // console.log(`compareResult: ${compareResult}`);
     if (compareResult === 0) {
       return mid;
     }
@@ -19,13 +15,17 @@ export const binarySearch = (list, item, compareFn) => {
     } else {
       high = mid - 1;
     }
-    // console.log(`high: ${high}`);
-    // console.log(`low: ${low}`);
   }
   return null;
 };
 
-export const binarySearchRecursive = (list, searchItem, compareFn, low = 0, high = Infinity) => {
+export const binarySearchRecursive = <T>(
+  list: T[],
+  searchItem: T,
+  compareFn: (a: T, b: T) => number,
+  low: number = 0,
+  high: number = Infinity,
+): number | null => {
   const top = (high === Infinity) ? list.length - 1 : high;
   if (low > top) {
     return null;
