@@ -22,3 +22,7 @@ Classic algorithm implementations in TypeScript, based on "Grokking Algorithms" 
 - Shared helpers (`head`, `tail`, `isEmpty`) live in `src/util/index.ts`
 - Algorithms are organized by category under `src/` (sort, search, graph, recursion, fibonacci, binary-tree, divide-and-conquer)
 - Many algorithms provide both iterative and recursive implementations
+
+## Git Workflow
+
+- Never force push (`--force`, `--force-with-lease`). Create new commits to fix mistakes instead of amending and force pushing.
